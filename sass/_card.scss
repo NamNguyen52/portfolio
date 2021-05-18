@@ -1,0 +1,125 @@
+.card {
+    height: auto;
+    width: 100%;
+    background: black;
+    overflow: visible;
+    position: relative;
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 18px;
+    border-radius: 3px;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: red;
+      z-index: -1;
+      transform: rotate(-1deg);
+      border-radius: 3px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1), 
+            0 2px 4px rgba(red,0.15), 
+            0 4px 8px rgba(red,0.15), 
+            0 8px 16px rgba(red,0.15),
+            0 16px 32px rgba(red,0.15), 
+            0 32px 64px rgba(red,0.15);
+    }
+    
+    &__inner {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      z-index: -1;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 3px;
+        background: cyan;
+        transform: rotate(1deg);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1), 
+            0 2px 4px rgba(cyan,0.15), 
+            0 4px 8px rgba(cyan,0.15), 
+            0 8px 16px rgba(cyan,0.15),
+            0 16px 32px rgba(cyan,0.15), 
+            0 32px 64px rgba(cyan,0.15);
+      }
+    }
+
+    &__hero {
+
+      &::after {
+        animation-name: rotate-border-hero;
+        animation-duration: 20s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 2;
+        animation-delay: 1s;
+        transform: rotate(30deg);
+        mix-blend-mode: darken;
+      }
+
+      .card__inner {
+        &::after {
+          animation-name: rotate-container-hero;
+          animation-duration: 20s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: 2;
+          transform: rotate(40deg);
+        }
+      }
+    }
+
+  }
+
+  @keyframes rotate-border-hero {
+    0% {
+      transform: rotate(30deg);
+    }
+    
+    25% {
+      transform: rotate(25deg); 
+    }
+    
+    50% {
+      transform: rotate(30deg);
+    }
+
+    75% {
+      transform: rotate(25deg); 
+    }
+    
+    100% {
+      transform: rotate(30deg);
+    }
+  }
+  
+  @keyframes rotate-container-hero {
+    0% {
+      transform: rotate(40deg);
+    }
+    
+    25% {
+      transform: rotate(45deg); 
+    }
+    
+    50% {
+      transform: rotate(40deg);
+    }
+
+    75% {
+      transform: rotate(45deg); 
+    }
+    
+    100% {
+      transform: rotate(40deg);
+    }
+  }

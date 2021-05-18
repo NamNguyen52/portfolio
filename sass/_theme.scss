@@ -1,0 +1,21 @@
+$background-color: hsl(244, 15%, 14%);
+$primary-color:  hsl(63, 47%, 83%);
+$primary-color-light: rgba($primary-color, .5);
+$secondary-color:  hsl(30, 100%, 47%);
+$tertiary-color:  hsl(8, 100%, 50%);
+$background-line-color: rgba($primary-color, .03);
+
+$hero-font-size: clamp(40px, 8vw, 80px);
+$content-font-size: 2rem;
+$header-font-size: clamp(26px, 5vw, 32px);
+$small-font-size: 1.4rem;
+$button-font-size: 1.5rem;
+$pannel-title-font-size: 2.2rem;
+
+$button-padding: 1.27em 1.75em;
+
+$font-family: "Calibre", "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+$font-family-mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+
+$number-of-pannels: 3;
+

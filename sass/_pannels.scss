@@ -1,0 +1,118 @@
+.pannels {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 2rem 2rem;
+    margin-top: 2.5rem;
+
+    @media (max-width: 45rem) {
+        display: block;
+    }
+
+    @for $i from 1 through $number-of-pannels {
+        .pannel#{$i} {
+            display: none;
+        }
+    }
+
+    input[type=radio] {
+        display: none;
+    }
+
+    label {
+        font-size: $content-font-size;
+        color: $primary-color;
+        grid-row: 1 / 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5em 1em;
+        background-color: $tertiary-color;
+        opacity: .4;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all .2s;
+        font-weight: 400;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+        0 2px 4px rgba(0,0,0,0.07), 
+        0 4px 8px rgba(0,0,0,0.07), 
+        0 8px 16px rgba(0,0,0,0.07),
+        0 16px 32px rgba(0,0,0,0.07), 
+        0 32px 64px rgba(0,0,0,0.07);
+
+        &:hover {
+            transform: translateY(-.2rem);
+            opacity: .5;
+        }
+
+        @media (max-width: 45rem) {
+            font-size: 1.5rem;
+            display: inline-block;
+            padding: .5em 1rem;
+            width: auto;
+        }
+    }
+
+    &__pannel {
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: 45rem) {
+            margin-top: 2rem;
+        }
+    }
+
+    &__head {
+        
+    }
+
+    &__title {
+        font-size: $pannel-title-font-size;
+        color: $primary-color;
+    }
+
+    &__subtitle {
+        font-size: $small-font-size;
+        color: $primary-color-light;
+        font-family: $font-family-mono;
+        font-weight: 400;
+    }
+
+    &__body {
+        padding: 1.5em 1.5em 1.5em 1em;
+    }
+
+    &__list {
+        li + li {
+            margin-top: 1.5rem;
+        }
+    }
+
+    @for $j from 1 through $number-of-pannels {
+        #pannel#{$j}:checked ~ .pannel#{$j} {
+            display: flex;
+        }
+
+        #pannel#{$j}:checked + label[for=pannel#{$j}] {
+            opacity: 1;
+            font-weight: 600;
+            cursor: default;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1), 
+            0 2px 4px rgba($tertiary-color,0.15), 
+            0 4px 8px rgba($tertiary-color,0.15), 
+            0 8px 16px rgba($tertiary-color,0.15),
+            0 16px 32px rgba($tertiary-color,0.15), 
+            0 32px 64px rgba($tertiary-color,0.15);
+
+            &:hover {
+                transform: translate(0);
+            }
+        }
+
+        label[for=pannel#{$j}] {
+            grid-column: #{$j} / #{$j} + 1;
+        }
+    }
+}

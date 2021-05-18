@@ -1,0 +1,139 @@
+.hero {
+    font-size: $hero-font-size;
+    color: $primary-color;
+
+    &--intro {
+        font-size: $content-font-size;
+        color: $secondary-color;
+        font-family: $font-family-mono;
+    }
+}
+
+.main {
+    position: relative;
+    padding: 2.4rem;
+    width: 100%;
+    max-width: 80rem;
+    z-index: 1;
+
+    @media (max-width: 80rem) {
+        overflow-x: hidden;
+    }
+}
+
+.content {
+    font-size: $content-font-size;
+    color: $primary-color-light;
+
+    + .content {
+        margin-top: 2em;
+    }
+}
+
+.section {
+    min-height: 30vh;
+
+    + .section {
+        margin-top: 10rem;
+    }
+
+    &--hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    &--card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &--contact {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.heading {
+    font-size: $header-font-size;
+    color: $primary-color;
+
+    &::before {
+        position: relative;
+        counter-increment: section 1;
+        content: "0" counter(section) ".";
+        margin-right: 1rem;
+        color: $secondary-color;
+        font-family: $font-family-mono;
+    }
+
+    &--no-count {
+        &::before {
+            content: '';
+        }
+    }
+
+    &--mono {
+        font-size: $content-font-size;
+        color: $secondary-color;
+        font-family: $font-family-mono;
+
+        &::before {
+            color: currentColor;
+        }
+    }
+}
+
+.button {
+    font-size: $button-font-size;
+    font-family: $font-family-mono;
+    font-weight: 700;
+    padding: $button-padding;
+    color: $tertiary-color;
+    background-color: transparent;
+    border: 2px solid $tertiary-color;
+    border-radius: 4px;
+    margin: 3em 0;
+    align-self: baseline;
+    cursor: pointer;
+    transition: background-color .3s;
+
+    &:hover {
+        background-color: rgba($tertiary-color, .3);
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+
+    &__link {
+        text-decoration: none;
+        display: inline-block;
+    }
+}
+
+.icon {
+    height: 3.5rem;
+    width: 3.5rem;
+    color: $primary-color-light;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.icons {
+    margin-top: 2.5rem;
+
+    a:hover .icon {
+        color: $primary-color;
+    }
+
+    a + a {
+        margin-left: 2rem;
+    }
+}
