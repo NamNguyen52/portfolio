@@ -15,10 +15,7 @@
     width: 100%;
     max-width: 80rem;
     z-index: 1;
-
-    @media (max-width: 80rem) {
-        overflow-x: hidden;
-    }
+    overflow: visible;
 }
 
 .content {

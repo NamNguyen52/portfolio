@@ -11,10 +11,8 @@
   padding: 2.4rem;
   width: 100%;
   max-width: 80rem;
-  z-index: 1; }
-  @media (max-width: 80rem) {
-    .main {
-      overflow-x: hidden; } }
+  z-index: 1;
+  overflow: visible; }
 
 .content {
   font-size: 2rem;
