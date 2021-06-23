@@ -95,6 +95,12 @@
   .icons a + a {
     margin-left: 2rem; }
 
+.link {
+  color: rgba(230, 232, 191, 0.7);
+  transition: all .2s ease-in; }
+  .link:hover {
+    color: #e6e8bf; }
+
 .pannels {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -235,7 +241,7 @@
     animation-duration: 20s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 2;
-    animation-delay: 1s;
+    animation-delay: .5s;
     transform: rotate(30deg);
     mix-blend-mode: darken; }
   .card__hero .card__inner::after {
