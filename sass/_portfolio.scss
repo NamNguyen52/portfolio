@@ -16,6 +16,10 @@
     max-width: 80rem;
     z-index: 1;
     overflow: visible;
+
+    @media screen and (max-width: 768px) {
+        overflow-x: hidden;
+    }
 }
 
 .content {
